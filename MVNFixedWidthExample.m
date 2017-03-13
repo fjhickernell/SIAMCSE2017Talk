@@ -137,11 +137,11 @@ if true
    muMVNProbMLELatticeGg = zeros(nRep,1);
    MLELatticeGgNrequired = zeros(nRep,1);
    MLELatticeGgTime = zeros(nRep,1);
-   errbdvecMBVProbMLELatticeGg(nnMLE,nRep) = 0;
+   errbdvecMBVProbMLELatticeGg(nRep,1) = 0;
    for i = 1:nRep
       gail.TakeNote(i,10)
-      [muMVNProbMLELatticeGg(:,i), out] = compProb(MVNProbMLELatticeGg); 
-      errbdvecMBVProbMLELatticeGg(:,i) = out.ErrBd;
+      [muMVNProbMLELatticeGg(i), out] = compProb(MVNProbMLELatticeGg); 
+      errbdvecMBVProbMLELatticeGg(i) = out.ErrBd;
       MLELatticeGgNrequired(i) = out.n;
       MLELatticeGgTime(i) = out.time;
    end
